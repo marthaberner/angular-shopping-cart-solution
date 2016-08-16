@@ -1,3 +1,11 @@
 body {
   margin: 1em;
 }
+
+.tea-info span {
+  display: block;
+}
+
+table {
+  margin-top: 2em;
+}

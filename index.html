@@ -7,11 +7,52 @@
     <link rel="stylesheet" href="/css/main.css" media="screen" title="no title" charset="utf-8">
   </head>
   <body ng-controller='TeasController as teasCtrl'>
-    <ul class="nav nav-tabs">
-      <li role="presentation" class="active"><a href="#">Home</a></li>
-      <li role="presentation"><a href="#">Profile</a></li>
-      <li role="presentation"><a href="#">Messages</a></li>
-    </ul>
+    <div class='main'>
+      <nav>
+        <ul class="nav nav-tabs">
+          <li role="presentation" class="active"><a href="#">Home</a></li>
+          <li role="presentation"><a href="#">Profile</a></li>
+          <li role="presentation"><a href="#">Messages</a></li>
+        </ul>
+      </nav>
+      <div ng-repeat='tea in teasCtrl.teas'>
+        {{tea.name}}
+
+      </div>
+      <section class='all-teas'>
+        <table class='table table-bordered'>
+          <thead>
+            <th>
+              Tea
+            </th>
+            <th>
+              Information
+            </th>
+          </thead>
+          <tbody>
+            <tr ng-repeat='tea in teasCtrl.all'>
+              <td>
+                <img ng-src="{{tea.imageUrl}}" alt="{{tea.name}}" />
+              </td>
+              <td class='tea-info'>
+                <h3>{{tea.name}}</h3>
+                <span>Price: {{tea.price}}</span>
+                <span>Caffeine Scale: {{tea.caffeineScale}}</span>
+                <span>Ingredients: {{tea.ingredients}}</span>
+                <span>Rating: {{tea.rating}}</span>
+                <span>In Stock: {{tea.inStock}}</span>
+                <span>
+                  Categories:
+                  <ul>
+                    <li ng-repeat='cat in tea.categories'>{{cat}}</li>
+                  </ul>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
   <script type="text/javascript" src='js/app.js'></script>
   <script type="text/javascript" src='js/controllers/teas_controller.js'></script>
