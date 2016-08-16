@@ -9,3 +9,7 @@ body {
 table {
   margin-top: 2em;
 }
+
+.sort-teas {
+  float: right;
+}
