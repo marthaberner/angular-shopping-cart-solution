@@ -1,7 +1,6 @@
-app.controller('TeasController', [ '$http', 'priceFilter', function ($http, priceFilter) {
+app.controller('TeasController', [ '$http', 'priceFilter', function ($http, priceFilter, $sanitize) {
   var _this = this;
   _this.sortTitle = '';
-
   $http.get('/data/tea.json').success(function (teas) {
     _this.all = teas;
   })
